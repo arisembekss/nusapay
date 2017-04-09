@@ -1,0 +1,150 @@
+{
+  "project_info": {
+    "project_number": "1003648665919",
+    "firebase_url": "https://smart-pulsa.firebaseio.com",
+    "project_id": "smart-pulsa",
+    "storage_bucket": "smart-pulsa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003648665919:android:fe73d68b82e233b3",
+        "android_client_info": {
+          "package_name": "com.dtech.smartpulsa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003648665919-1dcuht955rmlsg1cnccpfboi2kes37ot.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1003648665919-nq3mc253rgajkatreggb3t0mpogrmq58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dtech.smartpulsa",
+            "certificate_hash": "edfb9fb1a845d42a428b921d3b00c9765dc6f9d0"
+          }
+        },
+        {
+          "client_id": "1003648665919-cvki67ui9pfee7m54mj1qnjthrljj60h.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1003648665919-2b3r15j40vt1tjmu7hsad7njgi8dtmbd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dtech.smartpulsa",
+            "certificate_hash": "80806f978ae2ce0a174ca75a4e91f8e0d5201060"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM2tXuNgKlajaPaSjZ87ESjKORtCMVOeo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003648665919-1dcuht955rmlsg1cnccpfboi2kes37ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003648665919:android:67b9e5ffae31e00e",
+        "android_client_info": {
+          "package_name": "com.dtech.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003648665919-1dcuht955rmlsg1cnccpfboi2kes37ot.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1003648665919-cvki67ui9pfee7m54mj1qnjthrljj60h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM2tXuNgKlajaPaSjZ87ESjKORtCMVOeo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003648665919:android:497aec3141ef4140",
+        "android_client_info": {
+          "package_name": "com.samimi.nusapay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003648665919-nsh04h53tqfuo1rk814g3o4rs42partk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.samimi.nusapay",
+            "certificate_hash": "ef20688f09b3cbc6a99a7baa198b2735f0996822"
+          }
+        },
+        {
+          "client_id": "1003648665919-1dcuht955rmlsg1cnccpfboi2kes37ot.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1003648665919-cvki67ui9pfee7m54mj1qnjthrljj60h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM2tXuNgKlajaPaSjZ87ESjKORtCMVOeo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003648665919-1dcuht955rmlsg1cnccpfboi2kes37ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

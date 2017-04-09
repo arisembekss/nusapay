@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="#c0c0c0"
+    tools:targetApi="lollipop">
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorAccent" />
+            &lt;!&ndash;<corners
+                android:radius="25dp"/>&ndash;&gt;
+        </shape>
+    </item>
+    <item android:drawable="@drawable/round_1"/>
+</ripple>-->
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    &lt;!&ndash; State when a row is being pressed, but hasn't yet been activated (finger down) &ndash;&gt;
+    <item android:state_pressed="true"
+        android:drawable="@color/blueA"
+        />
+
+    &lt;!&ndash; For ListView in SINGLE_CHOICE_MODE, it flags the active row &ndash;&gt;
+    <item android:state_activated="true"
+        android:drawable="@color/tosca" />
+
+    &lt;!&ndash; Default, "just hangin' out" state. &ndash;&gt;
+    <item android:drawable="@android:color/transparent" />
+</selector>-->
+
+<inset
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="14dp"
+    android:insetTop="10dp"
+    android:insetRight="14dp"
+    android:insetBottom="10dp">
+    <layer-list>
+        <!-- Shadow. -->
+        <item
+            android:drawable="@drawable/button_shadow"
+            android:top="-0dp"
+            android:bottom="-1dp"
+            android:left="-0dp"
+            android:right="-0dp"/>
+        <item
+            android:drawable="@drawable/button_shadow_pressable"
+            android:top="-0dp"
+            android:bottom="-3dp"
+            android:left="-1dp"
+            android:right="-1dp"/>
+        <!-- Background. -->
+        <item android:drawable="@drawable/button_shape_normal"/>
+        <!-- Highlight. -->
+        <item>
+            <selector
+                android:enterFadeDuration="@integer/button_pressed_animation_duration"
+                android:exitFadeDuration="@integer/button_pressed_animation_duration">
+
+                <item
+                    android:drawable="@drawable/button_shape_highlight"
+                    android:state_focused="true"
+                    android:state_enabled="true"/>
+                <item
+                    android:drawable="@drawable/button_shape_highlight"
+                    android:state_pressed="true"
+                    android:state_enabled="true"/>
+                <item
+                    android:drawable="@drawable/button_shape_highlight"
+                    android:state_selected="true"
+                    android:state_enabled="true"/>
+                <item android:drawable="@android:color/transparent"/>
+            </selector>
+        </item>
+        <!-- Inner padding. -->
+        <item android:drawable="@drawable/button_padding"/>
+    </layer-list>
+</inset>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/transaksinav"
+            android:icon="@drawable/ic_grain_black_24dp"
+            android:title="Transaksi" />
+        <item
+            android:id="@+id/inboxnav"
+            android:icon="@drawable/ic_mail_outline_black_24dp"
+            android:title="Inbox" />
+        <item
+            android:id="@+id/tambahsaldonav"
+            android:icon="@drawable/ic_assistant_black_24dp"
+            android:title="Tambah Saldo" />
+        <item
+            android:id="@+id/tiketnav"
+            android:icon="@drawable/ic_airport_shuttle_black_24dp"
+            android:title="Tiket"
+            android:visible="false"/>
+        <item
+            android:id="@+id/dompetnav"
+            android:icon="@drawable/ic_monetization_on_black_24dp"
+            android:title="Dompet" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_history"
+                android:icon="@drawable/ic_history_black_24dp"
+                android:title="History &amp; Analisa " />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_shopping_cart_black_24dp"
+                android:title="Promo dan Info" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_store_black_24dp"
+                android:title="Tentang Kami" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/blueA"
+        android:id="@+id/viewTitle"/>
+    <TextView
+        android:text="TextView"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewTitle"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_marginTop="20dp"
+        android:id="@+id/ketPaket" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ketPaket"
+        android:id="@+id/edNomorPaket"
+        android:layout_marginTop="15dp"
+        android:inputType="number"
+        android:hint="Silahkan input nomor anda"/>
+
+    <Button
+        android:text="Beli Paket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnProsesPaket"
+        android:layout_below="@+id/edNomorPaket"
+        android:layout_alignRight="@+id/edNomorPaket"
+        android:layout_alignEnd="@+id/edNomorPaket"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/ripple_1"
+        android:layout_marginBottom="32dp"/>
+
+</RelativeLayout>

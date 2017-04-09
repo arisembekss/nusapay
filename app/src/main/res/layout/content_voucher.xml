@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_voucher"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme"
+        android:layout_marginRight="5dp"
+        android:id="@+id/toolbarVoucher">
+
+        <android.support.v7.widget.Toolbar
+
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bgd"
+            app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
+            android:theme="@style/AppTheme">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="25sp"
+                android:text="Voucher Game"/>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layVoucher"
+        android:layout_below="@+id/toolbarVoucher"
+        android:layout_marginTop="20dp">
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:id="@+id/nestedscrollvoucehr"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <GridView
+                    android:id="@+id/gridvoucher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:columnWidth="100dp"
+                    android:gravity="center"
+                    android:horizontalSpacing="2dp"
+                    android:verticalSpacing="2dp"
+                    android:listSelector="#00000000"
+                    android:numColumns="auto_fit"
+                    android:stretchMode="columnWidth" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layVoucherDetail"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/toolbarVoucher"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMainVoucher"
+            android:background="@drawable/ripple_1"
+            android:text="Ke Menu Utama Voucher"/>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/imageJnsVoucher"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/btnMainVoucher"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imageJnsVoucher"
+            android:layout_below="@+id/btnMainVoucher"
+            android:layout_alignParentLeft="true"
+            android:visibility="invisible"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="47dp"
+            android:layout_marginStart="47dp"
+            android:id="@+id/txtJnsVoucher" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:id="@+id/nestedscrollvoucehr2"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_below="@+id/imageJnsVoucher"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <GridView
+            android:id="@+id/gridvoucherdetail"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:columnWidth="100dp"
+            android:gravity="center"
+            android:listSelector="#00000000"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:horizontalSpacing="5dp"
+            android:verticalSpacing="5dp"
+            android:layout_marginTop="20dp"/>
+        </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+
+    <!--<fragment
+        android:name="com.dtech.smartpulsa.fragments.TempFragment"
+        android:id="@+id/fragmentVoucher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />-->
+
+</RelativeLayout>

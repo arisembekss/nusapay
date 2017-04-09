@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+
+            keyAlias 'nusapay'
+            keyPassword '300312'
+            storeFile file('E:/AndrostuProj/nusapay/nusapay.jks')
+            storePassword '300312'
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+        applicationId "com.samimi.nusapay"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 27
+        versionName "2.2.7"
+        //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    /*androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+                                exclude group: 'com.android.support', module: 'support-annotations'
+                            })*/
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:design:25.0.1'
+    compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    //google sign in
+    //compile 'com.google.android.gms:play-services:9.6.1'
+    compile 'com.google.android.gms:play-services-auth:10.0.1'
+    compile 'com.google.firebase:firebase-core:10.0.1'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
+    compile 'com.google.firebase:firebase-database:10.0.1'
+    compile 'com.google.firebase:firebase-auth:10.0.1'
+    //testCompile 'junit:junit:4.12'
+    compile 'com.android.support:recyclerview-v7:25.0.1'
+    compile 'com.android.support:cardview-v7:25.0.1'
+    compile('com.mikepenz:materialdrawer:5.8.1@aar') {
+        transitive = true
+    }
+    compile('com.github.worker8:tourguide:1.0.17-SNAPSHOT@aar') {
+        transitive = true
+    }
+    //chart library
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.1'
+    //used to provide different itemAnimators for the RecyclerView
+    //https://github.com/mikepenz/ItemAnimators
+    compile 'com.mikepenz:itemanimators:0.5.0@aar'
+    // used to provide the MiniDrawer to normal Drawer crossfade effect via a SlidingPane layout
+    // --> https://github.com/mikepenz/MaterialDrawer/blob/develop/app/src/main/java/com/mikepenz/materialdrawer/app/MiniDrawerActivity.java
+    // https://github.com/mikepenz/Crossfader
+    compile 'com.mikepenz:crossfader:1.5.0@aar'
+    // used to provide the two step crossfade DrawerLayout. Which allows to have a mini layout which transforms to a normal layout within the drawer
+    // --> https://github.com/mikepenz/MaterialDrawer/blob/develop/app/src/main/java/com/mikepenz/materialdrawer/app/CrossfadeDrawerLayoutActvitiy.java
+    // https://github.com/mikepenz/CrossfadeDrawerLayout
+    compile 'com.mikepenz:crossfadedrawerlayout:1.0.0@aar'
+    // icon fonts used inside the sample
+    // https://github.com/mikepenz/Android-Iconics
+    compile 'com.mikepenz:google-material-typeface:2.2.0.1@aar'
+    compile 'com.mikepenz:fontawesome-typeface:4.6.0.3@aar'
+    compile 'com.mikepenz:octicons-typeface:3.0.0.1@aar'
+    compile 'com.mikepenz:material-design-iconic-typeface:+@aar'
+    //compile 'com.github.bloder:magic:1.1'//magic button android-arsenal
+    compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
+    compile 'com.github.Hitomis:CircleMenu:v1.0.2'
+    compile 'com.race604.waveloading:library:1.1.1'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.easing:library:1.0.1@aar'
+    compile 'com.daimajia.androidanimations:library:1.1.3@aar'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.pkmmte.view:circularimageview:1.1'
+    //compile 'com.github.rey5137:material:1.2.4'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/libphonenumber-8.3.2.jar')
+}
+apply plugin: 'com.google.gms.google-services'

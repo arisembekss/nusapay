@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.samimi.nusapay">
+
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
+    <!-- <uses-permission android:name="android.permission.READ_SMS"/> -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="com.samimi.nusapay.configuration.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name="com.samimi.nusapay.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.samimi.nusapay.WelcomeActivity" />
+        <activity android:name="com.samimi.nusapay.WelcomeActivity2" />
+        <activity
+            android:name="com.samimi.nusapay.TempActivity"
+            android:label="@string/title_activity_temp"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.samimi.nusapay.AddSaldoActivity"
+            android:label="@string/title_activity_add_saldo"
+            android:parentActivityName="com.samimi.nusapay.TempActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.TempActivity" />
+        </activity>
+        <activity
+            android:name="com.samimi.nusapay.TrfConfirmActivity"
+            android:label="@string/title_activity_trf_confirm"
+            android:parentActivityName="com.samimi.nusapay.AddSaldoActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.AddSaldoActivity" />
+        </activity>
+        <activity
+            android:name="com.samimi.nusapay.feature.PulsaActivity"
+            android:label="@string/title_activity_pulsa"
+            android:parentActivityName="com.samimi.nusapay.TempActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.TempActivity" />
+        </activity>
+
+        <service android:name="com.samimi.nusapay.services.FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.samimi.nusapay.services.InstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_menu_share" />
+        <!--
+             Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <activity
+            android:name="com.samimi.nusapay.feature.TagihanActivity"
+            android:label="@string/title_activity_tagihan"
+            android:parentActivityName="com.samimi.nusapay.TempActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.TempActivity" />
+        </activity>
+        <activity
+            android:name="com.samimi.nusapay.feature.InboxActivity"
+            android:label="@string/title_activity_bayar_tagihan"
+            android:parentActivityName="com.samimi.nusapay.TempActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.TempActivity" />
+
+            <intent-filter>
+                <action android:name="ACTIVITY_INBOX" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.samimi.nusapay.feature.CekTagihan"
+            android:label="@string/title_activity_cek_tagihan"
+            android:parentActivityName="com.samimi.nusapay.TempActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.TempActivity" />
+        </activity>
+        <activity
+            android:name="com.samimi.nusapay.TokenActivity"
+            android:label="@string/title_activity_token"
+            android:parentActivityName="com.samimi.nusapay.TempActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.TempActivity" />
+        </activity>
+        <activity
+            android:name="com.samimi.nusapay.feature.QuickPayActivity"
+            android:label="@string/title_activity_quick_pay"
+            android:parentActivityName="com.samimi.nusapay.TempActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.TempActivity" />
+        </activity>
+        <activity
+            android:name="com.samimi.nusapay.feature.VoucherActivity"
+            android:label="@string/title_activity_voucher"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.TempActivity" />
+        </activity>
+        <activity
+            android:name="com.samimi.nusapay.feature.DetailHistActivity"
+            android:label="@string/title_activity_paket_data"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.samimi.nusapay.TransactActivity"
+            android:label="@string/title_activity_transact"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.samimi.nusapay.feature.DompetActivity"
+            android:label="@string/title_activity_dompet"
+            android:parentActivityName="com.samimi.nusapay.TempActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.TempActivity" />
+        </activity>
+        <activity android:name="com.samimi.nusapay.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.samimi.nusapay.feature.PoinCatActivity" />
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name="com.samimi.nusapay.HistoryActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="ACTIVITY_HISTORY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.samimi.nusapay.configuration.ConnectivityReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.samimi.nusapay.feature.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:parentActivityName="com.samimi.nusapay.TempActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samimi.nusapay.TempActivity" />
+        </activity>
+    </application>
+
+</manifest>

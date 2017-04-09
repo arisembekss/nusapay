@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_paket_data"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme"
+        android:layout_marginRight="5dp"
+        android:id="@+id/toolbarPaket">
+
+        <android.support.v7.widget.Toolbar
+
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bgd"
+            app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
+            android:theme="@style/AppTheme">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="25sp"
+                android:text="Paket Data"/>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layMainPaket"
+        android:layout_below="@+id/toolbarPaket"
+        android:layout_marginTop="20dp">
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:numColumns="2"
+
+            android:horizontalSpacing="2dp"
+            android:verticalSpacing="2dp"
+            android:id="@+id/gridpaket"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layDetailPaket"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/toolbarPaket"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMainPaket"
+            android:background="@drawable/ripple_1"
+            android:text="Ke Menu Utama Paket Data"/>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/imageJnsPaket"
+            android:layout_below="@+id/btnMainPaket"/>
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imageJnsPaket"
+            android:layout_below="@+id/btnMainPaket"
+            android:layout_alignTop="@+id/imageJnsPaket"
+            android:layout_marginLeft="10dp"
+            android:visibility="invisible"
+            android:id="@+id/txtJnsPaket" />
+
+        <!--<android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:id="@+id/nestedscrollpaket"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_below="@+id/imageJnsPaket"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <GridView
+                    android:id="@+id/gridpaketdetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:columnWidth="100dp"
+                    android:gravity="center"
+                    android:listSelector="#00000000"
+                    android:numColumns="auto_fit"
+                    android:stretchMode="columnWidth"
+
+                    android:layout_marginTop="20dp"/>-->
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/imageJnsPaket"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/recyclerpaket"/>
+        <!--    </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

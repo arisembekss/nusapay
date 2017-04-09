@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme"
+
+        android:layout_marginRight="5dp"
+        android:id="@+id/toolbarPulsa">
+
+        <android.support.v7.widget.Toolbar
+
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bgd"
+            app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
+            android:theme="@style/AppTheme">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="25sp"
+                android:text="Isi Pulsa"/>
+            </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/selfOrOther"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/toolbarPulsa">
+        <!--layout for self number-->
+        <!--<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/selfLayout"
+            android:visibility="gone">
+
+            <TextView
+                android:text="User Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tuserNumber"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:text="User Provider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tuserProvider"
+                android:layout_below="@+id/tuserNumber"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>-->
+
+        <!--layout for other number-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/otherLayout"
+            >
+            <!--<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editOtherNumber"
+                    android:hint="Input Your Number"
+                    android:layout_centerHorizontal="true"
+                    android:drawableRight="@drawable/ic_menu_manage"
+                    android:inputType="number" />
+            </RelativeLayout>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/editOtherNumber"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Nomor"
+                    android:textSize="20sp"
+                    android:inputType="phone"
+                    android:paddingRight="60dp"
+                    />
+                <ImageButton
+                    android:id="@+id/imgPin"
+                    android:layout_marginLeft="-60dp"
+                    style="?android:buttonBarButtonStyle"
+                    android:paddingBottom="23dp"
+                    android:visibility="invisible"
+                    android:src="@mipmap/ic_check_circle_black_24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtOtherNumber"
+        android:layout_below="@+id/selfOrOther"
+        android:text="Provider : "
+        android:layout_centerHorizontal="true"/>
+
+    <GridView
+        android:id="@+id/gridPulsa"
+        android:layout_below="@+id/txtOtherNumber"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:columnWidth="100dp"
+        android:gravity="center"
+        android:listSelector="#00000000"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth" />
+</RelativeLayout>
