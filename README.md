@@ -1,4 +1,4 @@
-# SmartPay
+# NusaPay
 
 Copyright 2016 D-Tech
 
