@@ -30,7 +30,7 @@
     <string name="drawer_item_open_source">Open Source</string>
     <string name="drawer_item_contact">Contact</string>
     <string name="title_activity_dompet">Dompetku</string>
-    <string name="text_keterangan">Catatan :\n- Bila sebelumnya anda telah menggunakan Pay Point maka data-data anda masih tersimpan aman dan akan di tampilkan di device ini\n\n- Bila anda pengguna baru Pay Point maka ini adalah satu langkah awal Keamanan dan Kenyamanan anda dalam melakukan transakai dan menikmati fitur-fitur yang kami berikan</string>
+    <string name="text_keterangan">Catatan :\n- Bila sebelumnya anda telah menggunakan Nusa Pay / Pay Point maka data-data anda masih tersimpan aman dan akan di tampilkan di device ini\n\n- Bila anda pengguna baru Nusa Pay maka ini adalah satu langkah awal Keamanan dan Kenyamanan anda dalam melakukan transakai dan menikmati fitur-fitur yang kami berikan</string>
     <string name="text_keterangan_2">Nomor anda akan kami gunakan untuk mengirim pemberitahuan tentang:\n- Transaksi pulsa yang gagal,\n- Provider yang mengalami gangguan\n- Promo dan pemberitahuan yang lain</string>
     <string name="desc_tr_first">di halaman ini menu-menu transaksi di wakili oleh icon - icon. Keterangan untuk masing-masing icon bisa anda lihat dengan klik menu tersebut</string>
     <string name="title_activity_about">About Us</string>

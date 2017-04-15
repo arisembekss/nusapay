@@ -54,7 +54,7 @@
                         android:layout_toRightOf="@+id/imgbca"
                         android:elevation="2dp"
                         android:textSize="15sp"
-                        android:text="No. Rek Pay Point\n8220513644\na.n Achmad Aris Efendi"/>
+                        android:text="No. Rek\n8220513644\na.n Achmad Aris Efendi"/>
 
                     <Button
                         android:text="Confirm"
@@ -97,7 +97,7 @@
                         android:layout_marginLeft="15dp"
                         android:layout_toRightOf="@+id/imgmandiri"
                         android:textSize="15sp"
-                        android:text="No. Rek Pay Point\n1410014541775\na.n Djainuri"/>
+                        android:text="No. Rek\n1410014541775\na.n Djainuri"/>
 
                     <Button
                         android:text="Confirm"
@@ -140,7 +140,7 @@
                         android:layout_marginLeft="15dp"
                         android:layout_toRightOf="@+id/imgbri"
                         android:textSize="15sp"
-                        android:text="No. Rek Pay Point\nAvailable Soon"/>
+                        android:text="No. Rek\nAvailable Soon"/>
 
                     <Button
                         android:text="Available\nSoon"
