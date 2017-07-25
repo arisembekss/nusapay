@@ -187,7 +187,7 @@ public class TagihanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 @Override
                 protected void onPostExecute(String s) {
                     super.onPostExecute(s);
-                    JSONObject jsonObject;
+                    JSONObject jsonObject = null;
                     try {
                         jsonObject = new JSONObject(s);
                         JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
@@ -218,10 +218,10 @@ public class TagihanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             dialog.show();
                         } else if (keterangan.matches("sukses")){
                             Toast.makeText(context, "Transaksi anda sedang diproses", Toast.LENGTH_SHORT).show();
-                            progress.dismiss();
                             detail.setText("On Proccess");
                             bayar.setEnabled(false);
                             hapus.setEnabled(false);
+                            progress.dismiss();
                         }
 
                     } catch (JSONException e) {

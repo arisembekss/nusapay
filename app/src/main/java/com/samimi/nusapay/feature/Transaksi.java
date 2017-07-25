@@ -3,6 +3,7 @@ package com.samimi.nusapay.feature;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.samimi.nusapay.configuration.Config;
@@ -23,7 +24,7 @@ import java.util.HashMap;
 
 public class Transaksi extends AsyncTask<Void, Void, String> {
 
-    String kode;
+    String kode, jsonn;
     String user;
     String jenisTransaksi;
     String NomorTuj;
@@ -91,9 +92,9 @@ public class Transaksi extends AsyncTask<Void, Void, String> {
         paramsTransaksi.put(Config.TRX_PULSA_NOMORTUJ, NomorTuj);
 
         reqHandler = new RequestHandler();
-        String res = reqHandler.sendPostRequest(Config.TRX_URL, paramsTransaksi);
+        String s = reqHandler.sendPostRequest(Config.TRX_URL, paramsTransaksi);
 
-        return res;
+        return s;
     }
 
     @Override
@@ -114,11 +115,13 @@ public class Transaksi extends AsyncTask<Void, Void, String> {
         if (reqHandler.getStatus() == 0) {
             new CustomDialog().makeDialog(context, "Ooopss", context.getString(R.string.dialog_title_connection_trouble) , "koneksi");
         }
+        jsonn = s;
         //progress.dismiss();
         JSONObject jsonObject = null;
         //String keterangan="";
         try {
-            jsonObject = new JSONObject(s);
+            jsonObject = new JSONObject(jsonn);
+            Log.d("Jsonn", jsonn);
             JSONArray result = jsonObject.getJSONArray(Config.TAG_JSON_ARRAY);
             String keterangan = "";
             String saldo = "";

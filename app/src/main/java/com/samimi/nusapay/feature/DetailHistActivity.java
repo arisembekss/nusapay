@@ -66,12 +66,12 @@ public class DetailHistActivity extends AppCompatActivity implements View.OnClic
         response = getIntent().getStringExtra("response");
         prepareJson();
         initUi();
-        if (jenis.matches("tagihan")) {
+        /*if (jenis.matches("tagihan")) {
             setDetailTagihan();
-            rfilter.setVisibility(View.GONE);
+            rfilter.setVisibility(View.VISIBLE);
         } else {
             rfilter.setVisibility(View.VISIBLE);
-        }  /*else if (jenis.matches("token")) {
+        } */ /*else if (jenis.matches("token")) {
             setDetailToken();
         }*/
         //Toast.makeText(this, response, Toast.LENGTH_LONG).show();
@@ -211,6 +211,8 @@ public class DetailHistActivity extends AppCompatActivity implements View.OnClic
                             setDetailToken();
                         } else if (jenis.matches("voucher")) {
                             setDetailVoucher();
+                        } else if (jenis.matches("tagihan")) {
+                            setDetailTagihan();
                         }
 
                         break;
@@ -223,6 +225,8 @@ public class DetailHistActivity extends AppCompatActivity implements View.OnClic
                             setDetailTokenThree();
                         }  else if (jenis.matches("voucher")) {
                             setDetailVoucherThree();
+                        } else if (jenis.matches("tagihan")) {
+                            setDetailTagihanThree();
                         }
                         break;
                     case R.id.f7:
@@ -234,6 +238,8 @@ public class DetailHistActivity extends AppCompatActivity implements View.OnClic
 
                         } else if (jenis.matches("voucher")) {
                             setDetailVoucherSeven();
+                        } else if (jenis.matches("tagihan")) {
+                            setDetailTagihanSeven();
                         }
                         break;
                     case R.id.f30:
@@ -244,6 +250,8 @@ public class DetailHistActivity extends AppCompatActivity implements View.OnClic
                             setDetailTokenThirty();
                         }  else if (jenis.matches("voucher")) {
                             setDetailVoucherThirty();
+                        } else if (jenis.matches("tagihan")) {
+                            setDetailTagihanThirty();
                         }
                         break;
                 }
@@ -252,7 +260,33 @@ public class DetailHistActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void setDetailTagihanThirty() {
+        List<DataPul> datadetail = new ArrayList<>();
+        if (tagihan30d.length() == 0) {
+            recyclerHist.setVisibility(View.GONE);
+            zerotrx.setVisibility(View.VISIBLE);
+        } else {
+            recyclerHist.setVisibility(View.VISIBLE);
+            zerotrx.setVisibility(View.GONE);
+        }
+        for (int k = 0; k < tagihan30d.length(); k++) {
+            try {
+                JSONObject jotagih = tagihan30d.getJSONObject(k);
+                DataPul datatagihan = new DataPul();
+                datatagihan.dateP = jotagih.getString("date");
+                datatagihan.kodeP = jotagih.getString("jenis_tagihan");
+                datatagihan.hargaP = jotagih.getString("jumlah_tagihan");
+                datatagihan.nomorP= jotagih.getString("nomor_tujuan");
+                datadetail.add(datatagihan);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        madapter = new AdapterDetailHist(DetailHistActivity.this, datadetail);
 
+        madapter.notifyDataSetChanged();
+        recyclerHist.setAdapter(madapter);
+
+        recyclerHist.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void setDetailVoucherThirty() {
@@ -260,7 +294,33 @@ public class DetailHistActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void setDetailTagihanSeven() {
+        List<DataPul> datadetail = new ArrayList<>();
+        if (tagihan7d.length() == 0) {
+            recyclerHist.setVisibility(View.GONE);
+            zerotrx.setVisibility(View.VISIBLE);
+        } else {
+            recyclerHist.setVisibility(View.VISIBLE);
+            zerotrx.setVisibility(View.GONE);
+        }
+        for (int k = 0; k < tagihan7d.length(); k++) {
+            try {
+                JSONObject jotagih = tagihan7d.getJSONObject(k);
+                DataPul datatagihan = new DataPul();
+                datatagihan.dateP = jotagih.getString("date");
+                datatagihan.kodeP = jotagih.getString("jenis_tagihan");
+                datatagihan.hargaP = jotagih.getString("jumlah_tagihan");
+                datatagihan.nomorP= jotagih.getString("nomor_tujuan");
+                datadetail.add(datatagihan);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        madapter = new AdapterDetailHist(DetailHistActivity.this, datadetail);
 
+        madapter.notifyDataSetChanged();
+        recyclerHist.setAdapter(madapter);
+
+        recyclerHist.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void setDetailVoucherSeven() {
@@ -268,7 +328,33 @@ public class DetailHistActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void setDetailTagihanThree() {
+        List<DataPul> datadetail = new ArrayList<>();
+        if (tagihan3d.length() == 0) {
+            recyclerHist.setVisibility(View.GONE);
+            zerotrx.setVisibility(View.VISIBLE);
+        } else {
+            recyclerHist.setVisibility(View.VISIBLE);
+            zerotrx.setVisibility(View.GONE);
+        }
+        for (int k = 0; k < tagihan3d.length(); k++) {
+            try {
+                JSONObject jotagih = tagihan3d.getJSONObject(k);
+                DataPul datatagihan = new DataPul();
+                datatagihan.dateP = jotagih.getString("date");
+                datatagihan.kodeP = jotagih.getString("jenis_tagihan");
+                datatagihan.hargaP = jotagih.getString("jumlah_tagihan");
+                datatagihan.nomorP= jotagih.getString("nomor_tujuan");
+                datadetail.add(datatagihan);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        madapter = new AdapterDetailHist(DetailHistActivity.this, datadetail);
 
+        madapter.notifyDataSetChanged();
+        recyclerHist.setAdapter(madapter);
+
+        recyclerHist.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void setDetailVoucherThree() {
@@ -277,6 +363,13 @@ public class DetailHistActivity extends AppCompatActivity implements View.OnClic
 
     private void setDetailTagihan() {
         List<DataPul> datadetail = new ArrayList<>();
+        if (tagihan.length() == 0) {
+            recyclerHist.setVisibility(View.GONE);
+            zerotrx.setVisibility(View.VISIBLE);
+        } else {
+            recyclerHist.setVisibility(View.VISIBLE);
+            zerotrx.setVisibility(View.GONE);
+        }
         for (int k = 0; k < tagihan.length(); k++) {
             try {
                 JSONObject jotagih = tagihan.getJSONObject(k);

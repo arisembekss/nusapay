@@ -67,7 +67,7 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
     TextView tlastdatesaldo, tcurrentsaldo, ttotaltransaksi, totalspend, ttotaltrxpulsa, ttotaltrxtoken,
             ttotaltrxtagihan, ttotaltrxvoucher, tdetailpulsa, tdetailtoken, tdetailtagihan, tdetailvoucher;
 
-    Button btndetailpulsa, btnDetailToken;
+    Button btndetailpulsa, btnDetailToken, btnDetailTagihan;
     //String[] kodeP;
 
     ProgressDialog loading;
@@ -234,9 +234,11 @@ public class HistoryActivity extends AppCompatActivity implements View.OnClickLi
 
         btndetailpulsa = (Button) findViewById(R.id.btndetailpulsa);
         btnDetailToken = (Button) findViewById(R.id.btndetailtoken);
+        btnDetailTagihan = (Button) findViewById(R.id.btndetailtagihan);
 
         btndetailpulsa.setOnClickListener(this);
         btnDetailToken.setOnClickListener(this);
+        btnDetailTagihan.setOnClickListener(this);
         mChart = (PieChart) findViewById(R.id.piechart);
         //mChart.setDescription(new Description().setText("Analisa Transaksi"));
 
