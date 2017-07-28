@@ -71,7 +71,7 @@ public class TempActivity extends AppCompatActivity
     TourGuide mTourGuideHandler, mTourGuideHandler2, mTourGuideHandler3;
     private static int SPLASH_TIME_OUT = 1100;
 
-    String imguri;
+    String imguri, sstatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -173,6 +173,7 @@ public class TempActivity extends AppCompatActivity
         }
 
         imageserver = (ImageView) findViewById(R.id.imgserver);
+        sstatus = (sharedPreferences.getString(Config.KODE_STATUS_SERVER, ""));
         textUser = (sharedPreferences.getString(Config.DISPLAY_NAME, ""));
         txtEmail = (sharedPreferences.getString(Config.DISPLAY_EMAIL, ""));
         txtNumber = (sharedPreferences.getString(Config.DISPLAY_NUMBER, ""));
@@ -185,6 +186,12 @@ public class TempActivity extends AppCompatActivity
             Log.d("Has been set ", "id user: " + idUsr + ", status: " + status);
         }
 
+        tstatus.setText(sstatus);
+        if (sstatus.contains("Tidak")) {
+            imageserver.setImageResource(R.drawable.red_circle_icon);
+        } else {
+            imageserver.setImageResource(R.drawable.green_circle_icon);
+        }
         //tTempor = (TextView) findViewById(R.id.textViewTempor);
 
         navemail.setText(txtEmail);
@@ -313,7 +320,7 @@ public class TempActivity extends AppCompatActivity
                                                  }
         );
 
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("server").child("status");
+        /*DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("server").child("status");
         myRef.keepSynced(true);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -332,7 +339,7 @@ public class TempActivity extends AppCompatActivity
             public void onCancelled(DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
         DatabaseReference myRefserver = FirebaseDatabase.getInstance().getReference().child("sms-server").child("stat-server");
         myRefserver.keepSynced(true);
@@ -340,7 +347,7 @@ public class TempActivity extends AppCompatActivity
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int sstatus= Integer.parseInt(String.valueOf(dataSnapshot.getValue()));
-                prefManager.setKodeStatusServer(sstatus);
+                //prefManager.setKodeStatusServer(sstatus);
                 /*tstatus.setText(sstatus);
                 if (sstatus.contains("Tidak")) {
                     imageserver.setImageResource(R.drawable.red_circle_icon);

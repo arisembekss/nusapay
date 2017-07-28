@@ -4,12 +4,18 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.samimi.nusapay.configuration.Config;
 import com.samimi.nusapay.preference.PrefManager;
 import com.race604.drawable.wave.WaveDrawable;
@@ -30,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        //prefManager = new PrefManager(this);
+        prefManager = new PrefManager(this);
 
         super.onCreate(savedInstanceState);
 
@@ -66,10 +72,26 @@ public class SplashActivity extends AppCompatActivity {
 
     public class Loading extends AsyncTask<Void, Void, Void> {
 
+        //String sstatus;
         @Override
         protected Void doInBackground(Void... voids) {
 
-            try {
+
+            DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("server").child("status");
+            myRef.keepSynced(true);
+            myRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String status= String.valueOf(dataSnapshot.getValue());
+                    prefManager.setKodeStatusServer(status);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+             try {
                 Thread.sleep(4000);
             }catch(InterruptedException ie){
                 ie.printStackTrace();

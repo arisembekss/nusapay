@@ -144,9 +144,9 @@ public class PrefManager {
         editor.commit();
     }
 
-    public void setKodeStatusServer(int kodeServer) {
-        String kodeStatusServer = Integer.toString(kodeServer);
-        editor.putString(KODE_STATUS_SERVER, kodeStatusServer);
+    public void setKodeStatusServer(String kodeServer) {
+        //String kodeStatusServer = Integer.toString(kodeServer);
+        editor.putString(KODE_STATUS_SERVER, kodeServer);
         editor.commit();
     }
 
