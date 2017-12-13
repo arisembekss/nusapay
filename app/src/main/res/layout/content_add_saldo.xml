@@ -54,7 +54,7 @@
                         android:layout_toRightOf="@+id/imgbca"
                         android:elevation="2dp"
                         android:textSize="15sp"
-                        android:text="No. Rek\n8220513644\na.n Achmad Aris Efendi"/>
+                        android:text="No. Rek\n8220519644\na.n Achmad Aris Efendi"/>
 
                     <Button
                         android:text="Confirm"
