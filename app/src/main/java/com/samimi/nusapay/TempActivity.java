@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,6 +69,7 @@ public class TempActivity extends AppCompatActivity
     public String textUser, txtEmail, txtFirebaseId, txtNumber, idUsr;
     DrawerLayout drawer;
     CircleMenu circleMenu;
+    LinearLayout linNote;
     TourGuide mTourGuideHandler, mTourGuideHandler2, mTourGuideHandler3;
     private static int SPLASH_TIME_OUT = 1100;
 
@@ -154,6 +156,7 @@ public class TempActivity extends AppCompatActivity
 
         layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         /*headerNav = layoutInflater.inflate(R.dialog_kota.nav_header_temp,null, true);*/
+        linNote = (LinearLayout) findViewById(R.id.linNote);
         headerNav = navigationView.getHeaderView(0);
         sharedPreferences = getSharedPreferences(Config.PREF_NAME, MODE_PRIVATE);
         navusername = (TextView) headerNav.findViewById(R.id.navusername);
@@ -303,6 +306,7 @@ public class TempActivity extends AppCompatActivity
                                                      @Override
                                                      public void onMenuOpened() {
                                                          //Toast.makeText(TempActivity.this, "Menu Opend", Toast.LENGTH_SHORT).show();
+                                                         linNote.setVisibility(View.VISIBLE);
                                                          if (prefManager.isTempFirstTimeLaunch()) {
                                                              mTourGuideHandler.cleanUp();
                                                              mTourGuideHandler2.playOn(circleMenu);
@@ -312,6 +316,7 @@ public class TempActivity extends AppCompatActivity
                                                      @Override
                                                      public void onMenuClosed() {
                                                          //Toast.makeText(TempActivity.this, "Menu Closed", Toast.LENGTH_SHORT).show();
+                                                         linNote.setVisibility(View.INVISIBLE);
                                                          if (prefManager.isTempFirstTimeLaunch()) {
                                                              mTourGuideHandler2.cleanUp();
                                                              mTourGuideHandler3.playOn(imageButton);

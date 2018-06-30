@@ -6,7 +6,7 @@
         <!--<item name="colorPrimary">@color/colorPrimary</item>-->
         <!--<item name="colorPrimary">@color/tosca</item>-->
         <item name="colorPrimary">@android:color/transparent</item>
-        <item name="colorPrimaryDark">@color/blueA</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="actionBarStyle">@style/ThemeActionBar</item>
         <item name="android:activatedBackgroundIndicator">@drawable/drawer_list_selector</item>
