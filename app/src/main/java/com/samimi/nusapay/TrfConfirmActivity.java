@@ -86,9 +86,9 @@ public class TrfConfirmActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                if (reqHandler.getStatus() == 0) {
+                /*if (reqHandler.getStatus() == 0) {
                     new CustomDialog().makeDialog(TrfConfirmActivity.this, "Ooopss", getString(R.string.dialog_title_connection_trouble) , "koneksi");
-                }
+                }*/
                 loading = ProgressDialog.show(TrfConfirmActivity.this, "Processing...", "Wait....", false, false);
             }
 
