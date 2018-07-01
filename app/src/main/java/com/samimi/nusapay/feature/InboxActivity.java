@@ -2,12 +2,14 @@ package com.samimi.nusapay.feature;
 
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -86,9 +88,12 @@ public class InboxActivity extends AppCompatActivity {
                 }
                 if (scrollRange + verticalOffset == 0) {
                     collapsingToolbar.setTitle(getString(R.string.title_activity_bayar_tagihan));
+                    appBarLayout.setBackground(ActivityCompat.getDrawable(InboxActivity.this, R.color.colorPrimaryDark));
+
                     isShow = true;
                 } else if (isShow) {
                     collapsingToolbar.setTitle(" ");
+                    appBarLayout.setBackground(ActivityCompat.getDrawable(InboxActivity.this, R.drawable.bg));
                     isShow = false;
                 }
             }

@@ -65,6 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:id="@+id/vsnack"
+        android:visibility="gone"
         android:background="@color/blueA"
         android:layout_gravity="bottom"/>
 </android.support.design.widget.CoordinatorLayout>

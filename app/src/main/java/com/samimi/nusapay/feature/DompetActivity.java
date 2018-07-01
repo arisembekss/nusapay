@@ -272,6 +272,11 @@ public class DompetActivity extends AppCompatActivity implements View.OnClickLis
 
     private void sendTukar(final String poin) {
 
+        int currentPoint = Integer.parseInt(point);
+        int changePoint = Integer.parseInt(poin);
+        if (currentPoint-changePoint<0){
+            Toast.makeText(DompetActivity.this, "jumlah poin yang akan di tukar tidak sesuai", Toast.LENGTH_SHORT).show();
+        } else{
             class CheckpCustomer extends AsyncTask<Void, Void, String> {
 
                 ProgressDialog loading;
@@ -296,6 +301,7 @@ public class DompetActivity extends AppCompatActivity implements View.OnClickLis
 
                 @Override
                 protected String doInBackground(Void... v) {
+
                     HashMap<String, String> params = new HashMap<>();
                     params.put(Config.POST_POINT, poin);
                     params.put(Config.TRX_PULSA_EMAIL, txtEmail);
@@ -310,7 +316,9 @@ public class DompetActivity extends AppCompatActivity implements View.OnClickLis
             CheckpCustomer checkCustomer = new CheckpCustomer();
             checkCustomer.execute();
 
-        alertDialog.dismiss();
+            alertDialog.dismiss();
+        }
+
 
     }
 

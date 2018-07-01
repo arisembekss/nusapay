@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:textColor="@color/AntiqueWhite"
-                android:text="Halaman Saldo"/>
+                android:text="Halaman Dompet"/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

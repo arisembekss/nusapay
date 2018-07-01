@@ -107,7 +107,7 @@ public class TransactActivity extends AppCompatActivity {
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
                         if (drawerItem instanceof Nameable) {
-                            Toast.makeText(TransactActivity.this, ((Nameable) drawerItem).getName().getText(TransactActivity.this), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(TransactActivity.this, ((Nameable) drawerItem).getName().getText(TransactActivity.this), Toast.LENGTH_SHORT).show();
                             String name = ((Nameable) drawerItem).getName().getText(TransactActivity.this);
                             //if (name.equals("Tagihan")) {
                                 openFragment(name);
