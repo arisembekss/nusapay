@@ -7,7 +7,7 @@ android {
             keyAlias 'nusapay'
             keyPassword '300312'
             storeFile file('../nusapay.jks')
-            storePassword '300312'
+
         }
     }
     compileSdkVersion 26
