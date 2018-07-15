@@ -44,4 +44,8 @@
     <string name="dialog_title_saldo">Saldo tidak mencukupi</string>
     <string name="dialog_title_telkomsel_data">Untuk sementara paket data Telkomsel Tidak Tersedia</string>
     <string name="dialog_title_connection_trouble1">Data tidak bisa ditampilkan.\nPastikan Koneksi Internet Stabil</string>
+
+    <string name="title_activity_banned">BannedActivity</string>
+    <string name="dummy_button">Ok</string>
+    <string name="dummy_content">Akun anda terdeteksi kegiatan yang tidak wajar\ndan melanggar syarat dan ketentuan yang berlaku\nsehingga akun anda dibekukan</string>
 </resources>

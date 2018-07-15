@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.samimi.nusapay.configuration.Config;
 import com.samimi.nusapay.configuration.RequestHandler;
 import com.samimi.nusapay.custom.CustomDialog;
+import com.samimi.nusapay.feature.UserCheck;
 import com.samimi.nusapay.preference.PrefManager;
 
 import java.util.HashMap;
@@ -31,6 +32,8 @@ public class TrfConfirmActivity extends AppCompatActivity {
     EditText nomorRek, namaRek, nominal;
     TextView txtRek, txtEmailUser;
     String strEmail, bank;
+    UserCheck userCheck;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +47,8 @@ public class TrfConfirmActivity extends AppCompatActivity {
         prefManager = new PrefManager(this);
         SharedPreferences sp = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
         strEmail = (sp.getString(Config.DISPLAY_EMAIL, ""));
+        userCheck = new UserCheck(TrfConfirmActivity.this);
+        userCheck.execute();
         initUI();
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

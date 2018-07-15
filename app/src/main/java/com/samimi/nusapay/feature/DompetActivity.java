@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.samimi.nusapay.AddSaldoActivity;
+import com.samimi.nusapay.TempActivity;
 import com.samimi.nusapay.configuration.Config;
 import com.samimi.nusapay.configuration.RequestHandler;
 import com.samimi.nusapay.R;
@@ -54,6 +55,7 @@ public class DompetActivity extends AppCompatActivity implements View.OnClickLis
     PrefManager prefManager;
     SharedPreferences sharedPreferences;
     WaveDrawable waveDrawable;
+    UserCheck userCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +79,8 @@ public class DompetActivity extends AppCompatActivity implements View.OnClickLis
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        userCheck = new UserCheck(DompetActivity.this);
+        userCheck.execute();
         iniUi();
         getJson();
     }

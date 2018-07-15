@@ -16,6 +16,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.samimi.nusapay.TempActivity;
 import com.samimi.nusapay.configuration.Config;
 import com.samimi.nusapay.configuration.RequestHandler;
 import com.samimi.nusapay.R;
@@ -41,6 +42,7 @@ public class InboxActivity extends AppCompatActivity {
     PrefManager prefManager;
     SharedPreferences sharedPreferences;
     TagihanAdapter mAdapter;
+    UserCheck userCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,8 @@ public class InboxActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        userCheck = new UserCheck(InboxActivity.this);
+        userCheck.execute();
         initUi();
 
         getDataTagihan();

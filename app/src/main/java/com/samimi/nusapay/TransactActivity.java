@@ -13,6 +13,7 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.samimi.nusapay.feature.UserCheck;
 import com.samimi.nusapay.fragments.FrPaket;
 import com.samimi.nusapay.fragments.FrSingleNumber;
 import com.samimi.nusapay.fragments.FrTagihan;
@@ -60,6 +61,7 @@ public class TransactActivity extends AppCompatActivity {
     View first;
     TourGuide mTourGuideHandler;
     FragmentTransaction fragmentTransaction;
+    UserCheck userCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,9 @@ public class TransactActivity extends AppCompatActivity {
 
             fragmentTransaction.commit();
         }
+
+        userCheck = new UserCheck(TransactActivity.this);
+        userCheck.execute();
 
         initUi();
         result = new DrawerBuilder()

@@ -9,9 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import com.samimi.nusapay.feature.UserCheck;
+
 public class AddSaldoActivity extends AppCompatActivity {
 
     Button bca, mandiri;
+    UserCheck userCheck;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,9 @@ public class AddSaldoActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        userCheck = new UserCheck(AddSaldoActivity.this);
+        userCheck.execute();
 
         bca = (Button) findViewById(R.id.btnBca);
         bca.setOnClickListener(new View.OnClickListener() {

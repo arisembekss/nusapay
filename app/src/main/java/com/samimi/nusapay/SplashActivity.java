@@ -91,6 +91,10 @@ public class SplashActivity extends AppCompatActivity {
 
                 }
             });
+
+            //TODO read user status on realDbase n save on prev
+
+            //end TODO
              try {
                 Thread.sleep(4000);
             }catch(InterruptedException ie){

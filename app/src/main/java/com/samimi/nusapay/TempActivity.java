@@ -30,8 +30,10 @@ import com.samimi.nusapay.configuration.ConnectivityReceiver;
 import com.samimi.nusapay.configuration.MyApplication;
 import com.samimi.nusapay.configuration.RequestHandler;
 import com.samimi.nusapay.feature.AboutActivity;
+import com.samimi.nusapay.feature.BannedActivity;
 import com.samimi.nusapay.feature.DompetActivity;
 import com.samimi.nusapay.feature.InboxActivity;
+import com.samimi.nusapay.feature.UserCheck;
 import com.samimi.nusapay.preference.PrefManager;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,6 +61,7 @@ public class TempActivity extends AppCompatActivity
 
     LayoutInflater layoutInflater ;
     View headerNav;
+    UserCheck userCheck;
     TextView navemail, navusername, tbalance, tstatus;
     ImageButton imageButton;
     CircularImageView imageAcc;
@@ -85,27 +88,26 @@ public class TempActivity extends AppCompatActivity
 
         prefManager = new PrefManager(this);
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
 
         /*ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();*/
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         checkConnection();
 
         /*Embeks*/
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        //myRef.child("server").child("status");
+        sharedPreferences = getSharedPreferences(Config.PREF_NAME, MODE_PRIVATE);
+        //TODO check user status prev banned false or true
+        userCheck = new UserCheck(TempActivity.this);
+        userCheck.execute();
+
         initUi();
-
-        if (prefManager.isTempFirstTimeLaunch()) {
-            initTour();
-        }
-
 
     }
 
@@ -147,7 +149,7 @@ public class TempActivity extends AppCompatActivity
                 .make(findViewById(R.id.vsnack), message, Snackbar.LENGTH_LONG);
 
         View sbView = snackbar.getView();
-        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+        TextView textView = sbView.findViewById(android.support.design.R.id.snackbar_text);
         textView.setTextColor(color);
         snackbar.show();
     }
@@ -156,14 +158,14 @@ public class TempActivity extends AppCompatActivity
 
         layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         /*headerNav = layoutInflater.inflate(R.dialog_kota.nav_header_temp,null, true);*/
-        linNote = (LinearLayout) findViewById(R.id.linNote);
+        linNote = findViewById(R.id.linNote);
         headerNav = navigationView.getHeaderView(0);
-        sharedPreferences = getSharedPreferences(Config.PREF_NAME, MODE_PRIVATE);
-        navusername = (TextView) headerNav.findViewById(R.id.navusername);
-        navemail = (TextView) headerNav.findViewById(R.id.navemail);
-        tbalance = (TextView) findViewById(R.id.tbalance);
-        imageAcc = (CircularImageView) headerNav.findViewById(R.id.imageViewAcc);
-        tstatus = (TextView) findViewById(R.id.status);
+
+        navusername = headerNav.findViewById(R.id.navusername);
+        navemail = headerNav.findViewById(R.id.navemail);
+        tbalance = findViewById(R.id.tbalance);
+        imageAcc = headerNav.findViewById(R.id.imageViewAcc);
+        tstatus = findViewById(R.id.status);
         /*imageAcc = (ImageView) headerNav.findViewById(R.id.imageViewAcc);*/
         //Uri setImgAcc = Uri.parse();
         imguri = (sharedPreferences.getString(Config.DISPLAY_ID, ""));
@@ -175,7 +177,7 @@ public class TempActivity extends AppCompatActivity
                     .into(imageAcc);
         }
 
-        imageserver = (ImageView) findViewById(R.id.imgserver);
+        imageserver = findViewById(R.id.imgserver);
         sstatus = (sharedPreferences.getString(Config.KODE_STATUS_SERVER, ""));
         textUser = (sharedPreferences.getString(Config.DISPLAY_NAME, ""));
         txtEmail = (sharedPreferences.getString(Config.DISPLAY_EMAIL, ""));
@@ -200,7 +202,7 @@ public class TempActivity extends AppCompatActivity
         navemail.setText(txtEmail);
         navusername.setText(textUser);
 
-        imageButton = (ImageButton) findViewById(R.id.openNav);
+        imageButton = findViewById(R.id.openNav);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -215,8 +217,11 @@ public class TempActivity extends AppCompatActivity
             }
         });
 
+        if (prefManager.isTempFirstTimeLaunch()) {
+            initTour();
+        }
         /*circle menu*/
-        circleMenu = (CircleMenu) findViewById(R.id.circle_menu);
+        circleMenu = findViewById(R.id.circle_menu);
 
         circleMenu.setMainMenu(Color.parseColor("#5481a2"), R.mipmap.ic_local_parking_white_24dp, R.mipmap.ic_close_white_24dp);
         circleMenu.addSubMenu(Color.parseColor("#258CFF"), R.mipmap.ic_grain_white_24dp)
@@ -404,7 +409,7 @@ public class TempActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
