@@ -102,7 +102,7 @@ public class TempActivity extends AppCompatActivity
         /*Embeks*/
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        sharedPreferences = getSharedPreferences(Config.PREF_NAME, MODE_PRIVATE);
+
         //TODO check user status prev banned false or true
         userCheck = new UserCheck(TempActivity.this);
         userCheck.execute();
@@ -160,7 +160,7 @@ public class TempActivity extends AppCompatActivity
         /*headerNav = layoutInflater.inflate(R.dialog_kota.nav_header_temp,null, true);*/
         linNote = findViewById(R.id.linNote);
         headerNav = navigationView.getHeaderView(0);
-
+        sharedPreferences = getSharedPreferences(Config.PREF_NAME, MODE_PRIVATE);
         navusername = headerNav.findViewById(R.id.navusername);
         navemail = headerNav.findViewById(R.id.navemail);
         tbalance = findViewById(R.id.tbalance);
@@ -217,12 +217,12 @@ public class TempActivity extends AppCompatActivity
             }
         });
 
+
+        /*circle menu*/
+        circleMenu = findViewById(R.id.circle_menu);
         if (prefManager.isTempFirstTimeLaunch()) {
             initTour();
         }
-        /*circle menu*/
-        circleMenu = findViewById(R.id.circle_menu);
-
         circleMenu.setMainMenu(Color.parseColor("#5481a2"), R.mipmap.ic_local_parking_white_24dp, R.mipmap.ic_close_white_24dp);
         circleMenu.addSubMenu(Color.parseColor("#258CFF"), R.mipmap.ic_grain_white_24dp)
                 .addSubMenu(Color.parseColor("#30A400"), R.mipmap.ic_mail_outline_white_24dp)

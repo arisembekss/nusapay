@@ -104,11 +104,11 @@ public class FrSingleNumber extends Fragment implements TextWatcher, AdapterView
     }
 
     private void initUI() {
-        gridView = (GridView) view.findViewById(R.id.gridPulsa);
+        gridView = view.findViewById(R.id.gridPulsa);
         gridView.setVisibility(View.GONE);
-        totherNumber = (TextView) view.findViewById(R.id.txtOtherNumber);
-        edOtherNumber = (EditText) view.findViewById(R.id.editOtherNumber);
-        imgPin = (ImageButton) view.findViewById(R.id.imgPin);
+        totherNumber = view.findViewById(R.id.txtOtherNumber);
+        edOtherNumber = view.findViewById(R.id.editOtherNumber);
+        imgPin = view.findViewById(R.id.imgPin);
         /*imgPin.setImageDrawable(GoogleMaterial.Icon.gmd_search);*/
         imgPin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,40 +187,6 @@ public class FrSingleNumber extends Fragment implements TextWatcher, AdapterView
 
         edOtherNumber.addTextChangedListener(this);
     }
-
-
-    /*private void prosesTransaksi() {
-
-        JSONObject jsonObject;
-        ArrayList<String> listharga = new ArrayList<String>();
-        ArrayList<String> listkode = new ArrayList<String>();
-        List<String> list = new ArrayList<>();
-        try {
-            jsonObject = new JSONObject(json_string);
-            JSONArray result = jsonObject.getJSONArray("result");
-            for (int i=0; i<result.length(); i++) {
-                JSONObject jo = result.getJSONObject(i);
-                nominal = jo.getString(Config.TAG_NOMINAL);
-                harga = jo.getString(Config.TAG_HARGA_PROV);
-                listkode.add(nominal+".000");
-                listharga.add("Harga: "+harga);
-
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            String[] kodetoken = listkode.toArray(new String[listkode.size()]);
-            String[] hargaToken = listharga.toArray(new String[listharga.size()]);
-
-            gridView.setAdapter(new CustomGridToken(hargaToken, kodetoken, getActivity()));
-            gridView.setOnItemClickListener(this);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
 
     private void tesTransaksi(String kodeProvider) {
 
@@ -354,7 +320,7 @@ public class FrSingleNumber extends Fragment implements TextWatcher, AdapterView
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        TextView tvkode = (TextView) view.findViewById(R.id.txtkodeToken);
+        TextView tvkode = view.findViewById(R.id.txtkodeToken);
 
         String nominalTemp = tvkode.getText().toString();
         String kodeTnsk = nominalTemp.replace(".000", "");
