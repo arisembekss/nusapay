@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Nu Pay</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
     <string name="action_settings">Settings</string>
     <string name="signed_in_fmt">Signed In As:</string>
     <string name="api_sign_in">1003648665919-1dcuht955rmlsg1cnccpfboi2kes37ot.apps.googleusercontent.com</string>

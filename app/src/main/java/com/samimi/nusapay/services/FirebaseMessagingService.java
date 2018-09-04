@@ -1,11 +1,13 @@
 package com.samimi.nusapay.services;
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 import android.util.Log;
@@ -21,6 +23,7 @@ import com.google.firebase.messaging.RemoteMessage;
 public class FirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMsgService";
 
+    Context context;
     /**
      * Called when message is received.
      *
@@ -92,8 +95,16 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
 
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        // Since android Oreo notification channel is needed.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String channelId = context.getString(R.string.default_notification_channel_id);
+            NotificationChannel channel = new NotificationChannel(channelId,   "Nu Pay", NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription(messageBody.getNotification().getBody());
+            notificationManager.createNotificationChannel(channel);
+            notificationBuilder.setChannelId(channelId);
+        }
 
-        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+        notificationManager.notify(1 /* ID of notification */, notificationBuilder.build());
     }
 
 
